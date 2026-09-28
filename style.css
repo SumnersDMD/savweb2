@@ -57,6 +57,26 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
 .logo-sub { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.3em; font-weight: 500; color: var(--warm-brown); margin-top: 0.2rem; }
 
 .nav-links { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid var(--forest-green);
+    background: transparent;
+    color: var(--forest-green);
+    cursor: pointer;
+}
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    margin: 4px 0;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-6px) rotate(-45deg); }
 .nav-links a { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; color: var(--forest-green); position: relative; }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background-color: var(--dusty-pink); transition: width 0.3s ease; }
 .nav-links a:hover::after { width: 100%; }
@@ -118,6 +138,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
 /* --- SPLIT LAYOUT (About) --- */
 .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .image-wrapper { position: relative; }
+.founder-image { width: 60%; height: 500px; object-fit: cover; }
 .image-placeholder {
     width: 100%; height: 500px; display: flex; align-items: center; justify-content: center;
     color: var(--forest-green); font-family: var(--font-heading); font-size: 1.5rem; border-radius: 2px;
@@ -233,11 +254,27 @@ footer { background-color: var(--forest-green); padding: 4rem 0; color: var(--sa
     .hero-title { font-size: 4rem; }
     .contact-split { grid-template-columns: 1fr; }
     .testimonial-grid { grid-template-columns: 1fr; }
-    .navbar { padding: 1.5rem 2rem; }
-    .nav-links { display: none; /* Add a hamburger menu here for full mobile support */ }
+    .navbar { padding: 1rem 2rem; }
+    .menu-toggle { display: block; }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 2rem 1.5rem;
+        background-color: var(--sand-beige);
+        box-shadow: 0 10px 20px rgba(44, 48, 44, 0.1);
+    }
+    .navbar.menu-open .nav-links { display: flex; }
+    .nav-links a { display: block; padding: 0.8rem 0; }
 }
 @media (max-width: 600px) {
     .hero-title { font-size: 2.8rem; }
+    .founder-image { width: 100%; }
     .footer-content { flex-direction: column; text-align: center; gap: 2rem; }
     .footer-links { text-align: center; }
 }
