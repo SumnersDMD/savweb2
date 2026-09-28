@@ -48,6 +48,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.5rem 4rem; background-color: var(--sand-beige);
+    border-bottom: 15px solid var(--forest-green);
     position: fixed; width: 100%; top: 0; z-index: 1000;
     box-shadow: 0 4px 20px rgba(44, 48, 44, 0.05);
 }
@@ -88,6 +89,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
     height: 100vh; display: flex; align-items: center; justify-content: center;
     text-align: center; background-color: var(--sand-beige);
     position: relative; padding-top: 80px; overflow: hidden;
+    
 }
 .hero-bg-accent {
     position: absolute; top: -20%; right: -10%; width: 60vw; height: 60vw;
@@ -139,7 +141,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
     cursor: pointer;
     padding: 1.75rem 2rem;
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 1.6vw, 2rem);
+    font-size: clamp(1.4rem, 1.5vw, 1.5rem);
     color: var(--sand-beige);
     position: relative;
     display: flex;
@@ -150,7 +152,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
 .service-pillar summary::-webkit-details-marker { display: none; }
 .service-pillar summary::after {
     content: '+';
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1;
     color: var(--dusty-pink);
     transition: transform 0.3s ease;
