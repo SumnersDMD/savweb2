@@ -30,7 +30,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
 /* --- UTILITY CLASSES --- */
-.section { padding: 7rem 0; }
+.section { padding: 4rem 0; }
 .bg-sand { background-color: var(--sand-beige); }
 .bg-forest { background-color: var(--forest-green); }
 .bg-white { background-color: var(--white); }
@@ -92,6 +92,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
     background-color: var(--forest-green);
 }
 .page-header h2 { color: var(--sand-beige); font-size: 3.5rem; margin-bottom: 1rem; }
+.page-header-headshot { display: block; width: 128px; height: 128px; margin: 1rem auto 1.5rem; object-fit: cover; border-radius: 50%; }
 .page-header p { color: var(--dusty-pink); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0; }
 
 /* --- BUTTONS --- */
@@ -138,7 +139,7 @@ a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.2
 /* --- SPLIT LAYOUT (About) --- */
 .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .image-wrapper { position: relative; }
-.founder-image { width: 60%; height: 500px; object-fit: cover; }
+.founder-image { display: block; width: 100%; height: auto; }
 .image-placeholder {
     width: 100%; height: 500px; display: flex; align-items: center; justify-content: center;
     color: var(--forest-green); font-family: var(--font-heading); font-size: 1.5rem; border-radius: 2px;
@@ -274,7 +275,6 @@ footer { background-color: var(--forest-green); padding: 4rem 0; color: var(--sa
 }
 @media (max-width: 600px) {
     .hero-title { font-size: 2.8rem; }
-    .founder-image { width: 100%; }
     .footer-content { flex-direction: column; text-align: center; gap: 2rem; }
     .footer-links { text-align: center; }
 }
